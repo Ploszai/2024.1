@@ -1,0 +1,6 @@
+{% extends 'colaboradores_app/base.html' %}{% block content %}
+<h1>{% if colaborador %}Editar{% else %}Novo{% endif %} Colaborador</h1>
+<form method='post' class='mt-3'>{% csrf_token %}{{ form.as_p }}
+    <button class='btn btn-primary' type='submit'>Salvar</button> 
+    <a href='{% url 'colaborador_list' %}' class='btn btn-secondary'>Cancelar</a>
+</form>{% endblock %}
